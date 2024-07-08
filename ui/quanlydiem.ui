@@ -269,19 +269,6 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>580</y>
-      <width>81</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Mã lớp</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
       <x>510</x>
       <y>510</y>
       <width>81</width>
@@ -289,20 +276,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Điểm TB</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>570</y>
-      <width>81</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Xếp loại</string>
+     <string>Mã lớp</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEditMaMonhoc">
@@ -318,28 +292,8 @@
    <widget class="QLineEdit" name="lineEditMalop">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>580</y>
-      <width>171</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditDiemTB">
-    <property name="geometry">
-     <rect>
       <x>610</x>
       <y>510</y>
-      <width>171</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditXeploai">
-    <property name="geometry">
-     <rect>
-      <x>610</x>
-      <y>570</y>
       <width>171</width>
       <height>31</height>
      </rect>
@@ -352,7 +306,7 @@
      <x>0</x>
      <y>0</y>
      <width>928</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

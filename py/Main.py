@@ -8,7 +8,7 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QPushButton
-import quanlymonhoc
+import quanlymonhoc, qltaiKhoan, TrangSV, QL_HS, ql_lop, qlAccount, quanlykhoa, quanlydiem
 
 
 class Ui_Main(object):
@@ -113,18 +113,17 @@ class Ui_Main(object):
         self.btn_ql_Hssv.clicked.connect(self.show_Hssv)
         self.btn_ql_thongke.clicked.connect(self.show_thongke)
 
-
     def retranslateUi(self, Main):
         _translate = QtCore.QCoreApplication.translate
         Main.setWindowTitle(_translate("Main", "Phần mềm quản lý điểm hệ đại học "))
         self.btn_ql_diem.setText(_translate("Main", "Quản lý điểm"))
         self.label.setText(_translate("Main", "Xây dựng phần mềm quản lý điểm hệ đại học "))
         self.btn_ql_monhoc.setText(_translate("Main", "Quản lý\n"
-        "môn học"))
+                                                      "môn học"))
         self.btn_ql_Hssv.setText(_translate("Main", "Quản lý hồ sơ\n"
-        "sinh viên  "))
+                                                    "sinh viên  "))
         self.btn_ql_lop.setText(_translate("Main", "Quản lý\n"
-        "lớp học"))
+                                                   "lớp học"))
         self.btn_ql_khoa.setText(_translate("Main", "Quản lý khoa"))
         self.btn_ql_thongke.setText(_translate("Main", "Thống kê"))
         item = self.tblThanhVienNhom.verticalHeaderItem(0)
@@ -155,53 +154,46 @@ class Ui_Main(object):
         item.setText(_translate("Main", "DCCNTT12.10.5"))
         self.tblThanhVienNhom.setSortingEnabled(__sortingEnabled)
 
-
-
     def show_khoa(self):
         self.window = QtWidgets.QMainWindow()
-        self.ui = quanlymonhoc.Ui_Quanlymonhoc()
+        self.ui = quanlykhoa.Ui_QuanLyKhoa()
         self.ui.setupUi(self.window)
         self.window.show()
 
     def show_thongke(self):
         self.window = QtWidgets.QMainWindow()
-        self.ui = quanlymonhoc.Ui_Quanlymonhoc()
+        self.ui = quanlymonhoc.Ui_QuanLyMonHoc()
         self.ui.setupUi(self.window)
         self.window.show()
 
     def show_lop(self):
         self.window = QtWidgets.QMainWindow()
-        self.ui = quanlymonhoc.Ui_Quanlymonhoc()
+        self.ui = ql_lop.Ui_QLlophoc()
         self.ui.setupUi(self.window)
         self.window.show()
 
     def show_Hssv(self):
         self.window = QtWidgets.QMainWindow()
-        self.ui = quanlymonhoc.Ui_Quanlymonhoc()
+        self.ui = QL_HS.Ui_FormQLHSSV()
         self.ui.setupUi(self.window)
         self.window.show()
 
     def show_monhoc(self):
         self.window = QtWidgets.QMainWindow()
-        self.ui = quanlymonhoc.Ui_Quanlymonhoc()
+        self.ui = quanlymonhoc.Ui_QuanLyMonHoc()
         self.ui.setupUi(self.window)
         self.window.show()
-
-
 
     def show_diem(self):
         self.window = QtWidgets.QMainWindow()
-        self.ui = quanlymonhoc.Ui_Quanlymonhoc()
+        self.ui = quanlydiem.Ui_QuanLyDiem()
         self.ui.setupUi(self.window)
         self.window.show()
-
-
-
-
 
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     Main = QtWidgets.QMainWindow()
     ui = Ui_Main()

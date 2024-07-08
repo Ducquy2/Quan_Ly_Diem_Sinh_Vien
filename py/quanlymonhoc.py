@@ -9,7 +9,7 @@ from tkinter import messagebox
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
+class Ui_QuanLyMonHoc(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(884, 576)

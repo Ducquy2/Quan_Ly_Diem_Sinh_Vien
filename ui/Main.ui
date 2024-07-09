@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>907</width>
-    <height>625</height>
+    <height>668</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -149,7 +149,7 @@ lớp học</string>
       <x>240</x>
       <y>80</y>
       <width>581</width>
-      <height>421</height>
+      <height>501</height>
      </rect>
     </property>
     <row>
@@ -281,6 +281,25 @@ lớp học</string>
       </font>
      </property>
     </item>
+   </widget>
+   <widget class="QPushButton" name="btn_ql_taikhoan">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>530</y>
+      <width>151</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Quản lý
+tài khoản</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

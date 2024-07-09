@@ -10,7 +10,6 @@ from tkinter import messagebox
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 import qltaiKhoan
-import quanlymonhoc
 import Main
 import TrangSV
 
@@ -71,7 +70,7 @@ class Ui_Login_Dialog(object):
         password = self.txtPass.text()
 
         # Kết nối với cơ sở dữ liệu và lấy loại tài khoản
-        conn = sqlite3.connect('../ui/ql_DiemHeDH.db')  # Thay 'your_database_name.db' bằng tên cơ sở dữ liệu thực tế của bạn
+        conn = sqlite3.connect('ql_DiemHeDH.db')  # Thay 'your_database_name.db' bằng tên cơ sở dữ liệu thực tế của bạn
         cursor = conn.cursor()
         cursor.execute("SELECT LoaiTaiKhoan FROM ql_TaiKhoan WHERE User = ? AND Password = ?", (username, password))
         account_type = cursor.fetchone()

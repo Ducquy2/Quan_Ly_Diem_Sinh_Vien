@@ -42,7 +42,7 @@ class Ui_QuanLyDiem(object):
         self.tableDiem.setColumnCount(8)
         self.tableDiem.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
-        item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignLeading | QtCore.Qt.AlignmentFlag.AlignVCenter)
         font = QtGui.QFont()
         font.setPointSize(10)
         item.setFont(font)
@@ -50,7 +50,7 @@ class Ui_QuanLyDiem(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableDiem.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
-        item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignLeading | QtCore.Qt.AlignmentFlag.AlignVCenter)
         font = QtGui.QFont()
         font.setPointSize(10)
         item.setFont(font)
@@ -58,13 +58,13 @@ class Ui_QuanLyDiem(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableDiem.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
-        item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignLeading | QtCore.Qt.AlignmentFlag.AlignVCenter)
         font = QtGui.QFont()
         font.setPointSize(10)
         item.setFont(font)
         self.tableDiem.setHorizontalHeaderItem(4, item)
         item = QtWidgets.QTableWidgetItem()
-        item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignLeading | QtCore.Qt.AlignmentFlag.AlignVCenter)
         font = QtGui.QFont()
         font.setPointSize(10)
         item.setFont(font)
@@ -79,6 +79,9 @@ class Ui_QuanLyDiem(object):
         self.btnThem = QtWidgets.QPushButton(parent=self.centralwidget)
         self.btnThem.setGeometry(QtCore.QRect(840, 50, 75, 23))
         self.btnThem.setObjectName("btnThem")
+        self.btnDiemtb = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.btnDiemtb.setGeometry(QtCore.QRect(840, 330, 71, 28))
+        self.btnDiemtb.setObjectName("btnDiemtb")
         self.lineEditMaSV = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.lineEditMaSV.setGeometry(QtCore.QRect(140, 380, 171, 31))
         self.lineEditMaSV.setObjectName("lineEditMaSV")
@@ -117,7 +120,7 @@ class Ui_QuanLyDiem(object):
         self.lineEditXeploai.setObjectName("lineEditXeploai")
         QuanLyDiem.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=QuanLyDiem)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 928, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 928, 26))
         self.menubar.setObjectName("menubar")
         QuanLyDiem.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=QuanLyDiem)
@@ -133,6 +136,7 @@ class Ui_QuanLyDiem(object):
         self.btnThem.clicked.connect(self.them_diem)
         self.btnXoa.clicked.connect(self.xoa_diem)
         self.tableDiem.itemDoubleClicked.connect(self.hien_thi)
+        self.btnDiemtb.clicked.connect(self.Diem_tb)
 
     def retranslateUi(self, QuanLyDiem):
         _translate = QtCore.QCoreApplication.translate
@@ -161,6 +165,7 @@ class Ui_QuanLyDiem(object):
         item.setText(_translate("QuanLyDiem", "Xếp Loại"))
         self.label_2.setText(_translate("QuanLyDiem", "Tên sinh viên"))
         self.btnThem.setText(_translate("QuanLyDiem", "Thêm"))
+        self.btnDiemtb.setText(_translate("QuanLyDiem", "Điểm TB"))
         self.label.setText(_translate("QuanLyDiem", "Mã sinh viên"))
         self.label_5.setText(_translate("QuanLyDiem", "Mã môn học"))
         self.label_6.setText(_translate("QuanLyDiem", "Mã lớp"))
@@ -180,6 +185,30 @@ class Ui_QuanLyDiem(object):
                 self.tableDiem.setItem(row_index, col_index, QtWidgets.QTableWidgetItem(str(col_data)))
         conn.close()
 
+    def Diem_tb(self):
+        try:
+            diem1 = float(self.lineEditDiem1.text())
+            diem2 = float(self.lineEditDiem2.text())
+            Diemtb = (diem1 + diem2) / 2
+            self.lineEditDiemTB.setText(str(Diemtb))
+
+            if Diemtb >= 9:
+                xeploai = 'A'
+            elif 8 <= Diemtb < 9:
+                xeploai = 'B'
+            elif 6 <= Diemtb < 8:
+                xeploai = 'C'
+            elif 4.5 <= Diemtb < 6:
+                xeploai = 'D'
+            else:
+                xeploai = 'F'
+
+            self.lineEditXeploai.setText(xeploai)
+
+        except ValueError:
+            self.lineEditDiemTB.setText('')
+            self.lineEditXeploai.setText('')
+
     def them_diem(self):
         # Xử lý sự kiện khi nhấn nút "Thêm"
         masv = self.lineEditMaSV.text()
@@ -194,9 +223,10 @@ class Ui_QuanLyDiem(object):
         # Thực hiện thêm dữ liệu vào bảng diem
         conn = sqlite3.connect("ql_diemHeDH.db")
         cursor = conn.cursor()
-        cursor.execute(
-            "INSERT INTO ql_Diem (MaSV, TenSV, MaMH, MaLop, DiemLan1, DiemLan2, DiemTrungBinh, XepLoai) VALUES (?, ?, ?, ?,?,?,?,?)",
-            (masv, tensv, mamonhoc, malop, diem1, diem2, diemtb, xeploai))
+        cursor.execute('''
+                    INSERT INTO ql_Diem (MaSV, TenSV, MaMH, MaLop, DiemLan1, DiemLan2, DiemTrungBinh, XepLoai)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                ''', (masv, tensv, mamonhoc, malop, diem1, diem2, diemtb, xeploai))
         conn.commit()
         conn.close()
         self.load_data()
@@ -222,7 +252,7 @@ class Ui_QuanLyDiem(object):
     def sua_diem(self):
         masv = self.lineEditMaSV.text()
         tensv = self.lineEditTenSV.text()
-        mamonhoc = self.lineEditMaMonhoc.text()
+        mamh = self.lineEditMaMonhoc.text()
         malop = self.lineEditMalop.text()
         diem1 = self.lineEditDiem1.text()
         diem2 = self.lineEditDiem2.text()
@@ -232,10 +262,12 @@ class Ui_QuanLyDiem(object):
         # Thực hiện thêm dữ liệu vào bảng diem
         conn = sqlite3.connect("ql_diemHeDH.db")
         cursor = conn.cursor()
-        cursor.execute(
-            "UPDATE ql_Diem SET DiemLan1 = ?, DiemLan2 = ? ,DiemTrungBinh = ? XepLoai = ? TenSV = ?  MaMH = ?  MaLop "
-            "= ? WHERE MaSV = ?",
-            (diem1, diem2, diemtb, xeploai, tensv, mamonhoc, malop, masv))
+        cursor.execute("""
+                    UPDATE ql_Diem
+                    SET TenSV = ?, MaMH = ?, MaLop= ?, DiemLan1 = ?, DiemLan2 = ?, DiemTrungBinh = ?, XepLoai = ?
+                    WHERE MaSV = ?
+                """, (tensv, mamh, malop, diem1, diem2, diemtb, xeploai, masv))
+
         conn.commit()
         conn.close()
         self.load_data()
@@ -309,6 +341,7 @@ class Ui_QuanLyDiem(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     QuanLyDiem = QtWidgets.QMainWindow()
     ui = Ui_QuanLyDiem()

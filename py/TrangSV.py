@@ -13,13 +13,13 @@ from PyQt6.QtWidgets import QTableWidgetItem
 class Ui_TrangSinhVien(object):
     def setupUi(self, TrangSinhVien):
         TrangSinhVien.setObjectName("TrangSinhVien")
-        TrangSinhVien.resize(840, 503)
+        TrangSinhVien.resize(1182, 799)
         self.centralwidget = QtWidgets.QWidget(parent=TrangSinhVien)
         self.centralwidget.setObjectName("centralwidget")
         self.tableWidget = QtWidgets.QTableWidget(parent=self.centralwidget)
-        self.tableWidget.setGeometry(QtCore.QRect(70, 100, 711, 281))
+        self.tableWidget.setGeometry(QtCore.QRect(50, 190, 1061, 311))
         self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(7)
+        self.tableWidget.setColumnCount(8)
         self.tableWidget.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(0, item)
@@ -35,12 +35,81 @@ class Ui_TrangSinhVien(object):
         self.tableWidget.setHorizontalHeaderItem(5, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(6, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(7, item)
+        self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(420, 80, 311, 31))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.txtMaSV = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.txtMaSV.setGeometry(QtCore.QRect(120, 540, 201, 41))
+        self.txtMaSV.setObjectName("txtMaSV")
+        self.btnTim = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.btnTim.setGeometry(QtCore.QRect(790, 670, 151, 61))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.btnTim.setFont(font)
+        self.btnTim.setObjectName("btnTim")
+
+        self.btnRefesh = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.btnRefesh.setGeometry(QtCore.QRect(970, 670, 151, 61))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.btnRefesh.setFont(font)
+        self.btnRefesh.setObjectName("btnRefesh")
+
+        self.txtTenSV = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.txtTenSV.setGeometry(QtCore.QRect(120, 610, 201, 41))
+        self.txtTenSV.setObjectName("txtTenSV")
+        self.txtMonHoc = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.txtMonHoc.setGeometry(QtCore.QRect(120, 680, 201, 41))
+        self.txtMonHoc.setObjectName("txtMonHoc")
+        self.txtKhoa = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.txtKhoa.setGeometry(QtCore.QRect(500, 540, 201, 41))
+        self.txtKhoa.setObjectName("txtKhoa")
+        self.txtDiem1 = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.txtDiem1.setGeometry(QtCore.QRect(500, 610, 201, 41))
+        self.txtDiem1.setObjectName("txtDiem1")
+        self.txtDiem2 = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.txtDiem2.setGeometry(QtCore.QRect(500, 680, 201, 41))
+        self.txtDiem2.setObjectName("txtDiem2")
+        self.txtDiemTB = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.txtDiemTB.setGeometry(QtCore.QRect(910, 540, 201, 41))
+        self.txtDiemTB.setObjectName("txtDiemTB")
+        self.txtXepLoai = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.txtXepLoai.setGeometry(QtCore.QRect(910, 610, 201, 41))
+        self.txtXepLoai.setObjectName("txtXepLoai")
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(330, 50, 201, 31))
+        self.label.setGeometry(QtCore.QRect(20, 550, 81, 16))
         self.label.setObjectName("label")
+        self.label_3 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(20, 630, 91, 16))
+        self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(20, 700, 91, 16))
+        self.label_4.setObjectName("label_4")
+        self.label_5 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(420, 550, 55, 16))
+        self.label_5.setObjectName("label_5")
+        self.label_6 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_6.setGeometry(QtCore.QRect(410, 630, 71, 16))
+        self.label_6.setObjectName("label_6")
+        self.label_7 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_7.setGeometry(QtCore.QRect(410, 690, 81, 16))
+        self.label_7.setObjectName("label_7")
+        self.label_8 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_8.setGeometry(QtCore.QRect(800, 560, 111, 16))
+        self.label_8.setObjectName("label_8")
+        self.label_9 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_9.setGeometry(QtCore.QRect(810, 630, 81, 16))
+        self.label_9.setObjectName("label_9")
         TrangSinhVien.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=TrangSinhVien)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 840, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1182, 26))
         self.menubar.setObjectName("menubar")
         TrangSinhVien.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=TrangSinhVien)
@@ -49,7 +118,11 @@ class Ui_TrangSinhVien(object):
 
         self.retranslateUi(TrangSinhVien)
         QtCore.QMetaObject.connectSlotsByName(TrangSinhVien)
+
         self.load_data()
+        self.tableWidget.itemDoubleClicked.connect(self.hien_thi)
+        self.btnTim.clicked.connect(self.tim_kiem)
+        self.btnRefesh.clicked.connect(self.Load_dulieu)
 
     def retranslateUi(self, TrangSinhVien):
         _translate = QtCore.QCoreApplication.translate
@@ -61,34 +134,124 @@ class Ui_TrangSinhVien(object):
         item = self.tableWidget.horizontalHeaderItem(2)
         item.setText(_translate("TrangSinhVien", "Tên Môn Học"))
         item = self.tableWidget.horizontalHeaderItem(3)
-        item.setText(_translate("TrangSinhVien", "Điểm lần 1"))
+        item.setText(_translate("TrangSinhVien", "Khoa"))
         item = self.tableWidget.horizontalHeaderItem(4)
-        item.setText(_translate("TrangSinhVien", "Điểm lần 2"))
+        item.setText(_translate("TrangSinhVien", "Điểm lần 1"))
         item = self.tableWidget.horizontalHeaderItem(5)
-        item.setText(_translate("TrangSinhVien", "Điểm TB"))
+        item.setText(_translate("TrangSinhVien", "Điểm lần 2"))
         item = self.tableWidget.horizontalHeaderItem(6)
+        item.setText(_translate("TrangSinhVien", "Điểm TB"))
+        item = self.tableWidget.horizontalHeaderItem(7)
         item.setText(_translate("TrangSinhVien", "Xếp Loại"))
-        self.label.setText(_translate("TrangSinhVien", "TextLabel"))
+        self.label_2.setText(_translate("TrangSinhVien", "TRANG SINH VIÊN"))
+        self.btnTim.setText(_translate("TrangSinhVien", "Tìm"))
+        self.btnRefesh.setText(_translate("TrangSinhVien", "Làm mới"))
+        self.label.setText(_translate("TrangSinhVien", "Mã Sinh Viên"))
+        self.label_3.setText(_translate("TrangSinhVien", "Tên Sinh Viên"))
+        self.label_4.setText(_translate("TrangSinhVien", "Tên Môn Học"))
+        self.label_5.setText(_translate("TrangSinhVien", "Khoa"))
+        self.label_6.setText(_translate("TrangSinhVien", "Điểm lần 1"))
+        self.label_7.setText(_translate("TrangSinhVien", "Điểm Lần 2"))
+        self.label_8.setText(_translate("TrangSinhVien", "Điểm trung bình"))
+        self.label_9.setText(_translate("TrangSinhVien", "Xếp Loại"))
 
     def load_data(self):
-        conn = sqlite3.connect('../ui/ql_DiemHeDH.db')
+        conn = sqlite3.connect('ql_diemHeDH.db')
         cursor = conn.cursor()
-        cursor.execute("""
-            SELECT ql_HoSoSV.MaSV, ql_HoSoSV.TenSV, ql_MonHoc.TenMH, ql_Diem.DiemLan1, ql_Diem.DiemLan2
+
+        query = """
+            SELECT ql_HoSoSV.MaSV, ql_HoSoSV.TenSV, ql_MonHoc.TenMH, ql_Khoa.TenKhoa, ql_Diem.DiemLan1, ql_Diem.DiemLan2, ql_Diem.DiemTrungBinh, ql_Diem.XepLoai
             FROM ql_HoSoSV
             JOIN ql_Diem ON ql_HoSoSV.MaSV = ql_Diem.MaSV
-            JOIN ql_MonHoc ON ql_Diem.MonHoc = ql_MonHoc.MaMH
-        """)
-        data = cursor.fetchall()
+            JOIN ql_MonHoc ON ql_Diem.MaMH = ql_MonHoc.MaMH
+            JOIN ql_Khoa ON ql_MonHoc.MaKhoa = ql_Khoa.MaKhoa
+        """
+        cursor.execute(query)
+        results = cursor.fetchall()
 
-        self.tableWidget.setRowCount(len(data))
-        self.tableWidget.setColumnCount(5)
-        self.tableWidget.setHorizontalHeaderLabels(['MaSV', 'TenSV', 'TenMH', 'DiemLan1', 'DiemLan2'])
+        self.tableWidget.setRowCount(len(results))
+        self.tableWidget.setColumnCount(8)
+        self.tableWidget.setHorizontalHeaderLabels(
+            ['Mã Sinh viên', 'Tên Sinh Viên', 'Tên Môn Học', 'Khoa', 'Điểm Lần 1', 'Điểm Lần 2', 'Điểm Trung Bình',
+             'Xếp Loại'])
 
-        for i, row in enumerate(data):
+        for i, row in enumerate(results):
             for j, value in enumerate(row):
                 self.tableWidget.setItem(i, j, QTableWidgetItem(str(value)))
+
         conn.close()
+
+    def hien_thi(self, item):
+        selected_row = item.row()
+        masv = self.tableWidget.item(selected_row, 0).text()
+        tensv = self.tableWidget.item(selected_row, 1).text()
+        tenmonhoc = self.tableWidget.item(selected_row, 2).text()
+        Khoa = self.tableWidget.item(selected_row, 3).text()
+        diem1 = self.tableWidget.item(selected_row, 4).text()
+        diem2 = self.tableWidget.item(selected_row, 5).text()
+        diemtb = self.tableWidget.item(selected_row, 6).text()
+        xeploai = self.tableWidget.item(selected_row, 7).text()
+
+        # Hiển thị giá trị trong các lineEdit
+        self.txtMonHoc.setText(tenmonhoc)
+        self.txtMaSV.setText(masv)
+        self.txtDiem1.setText(diem1)
+        self.txtDiem2.setText(diem2)
+        self.txtKhoa.setText(Khoa)
+        self.txtDiemTB.setText(diemtb)
+        self.txtXepLoai.setText(xeploai)
+        self.txtTenSV.setText(tensv)
+
+        self.load_data()
+
+    def tim_kiem(self):
+        masv = self.txtMaSV.text()
+        tensv = self.txtTenSV.text()
+        tenmonhoc = self.txtMonHoc.text()
+        khoa = self.txtKhoa.text()
+        diem1 = self.txtDiem1.text()
+        diem2 = self.txtDiem2.text()
+        diemtb = self.txtDiemTB.text()
+        xeploai = self.txtXepLoai.text()
+
+        # Xóa dữ liệu hiện có trong tableWidget
+        self.tableWidget.clearContents()
+
+        # Kết nối đến cơ sở dữ liệu
+        conn = sqlite3.connect('ql_diemHeDH.db')
+        cursor = conn.cursor()
+
+        cursor.execute(
+            "SELECT ql_HoSoSV.MaSV, ql_HoSoSV.TenSV, ql_MonHoc.TenMH, ql_Khoa.TenKhoa, ql_Diem.DiemLan1, ql_Diem.DiemLan2, ql_Diem.DiemTrungBinh, ql_Diem.XepLoai "
+            "FROM ql_HoSoSV "
+            "JOIN ql_Diem ON ql_HoSoSV.MaSV = ql_Diem.MaSV "
+            "JOIN ql_MonHoc ON ql_Diem.MaMH = ql_MonHoc.MaMH "
+            "JOIN ql_Khoa ON ql_MonHoc.MaKhoa = ql_Khoa.MaKhoa "
+            "WHERE ql_HoSoSV.MaSV LIKE ? AND ql_HoSoSV.TenSV LIKE ? AND ql_MonHoc.TenMH LIKE ? AND ql_Khoa.TenKhoa LIKE ? AND ql_Diem.DiemLan1 LIKE ? "
+            "AND ql_Diem.DiemLan2 LIKE ? AND ql_Diem.DiemTrungBinh LIKE ? AND ql_Diem.XepLoai LIKE ?",
+            ('%' + masv + '%', '%' + tensv + '%', '%' + tenmonhoc + '%', '%' + khoa + '%', '%' + diem1 + '%',
+             '%' + diem2 + '%', '%' + diemtb + '%', '%' + xeploai + '%'))
+        diem = cursor.fetchall()
+
+        self.tableWidget.setRowCount(len(diem))
+        for row_index, row_data in enumerate(diem):
+            for col_index, col_data in enumerate(row_data):
+                self.tableWidget.setItem(row_index, col_index, QtWidgets.QTableWidgetItem(str(col_data)))
+
+        conn.close()
+
+    def Load_dulieu(self):
+        # Xóa nội dung trong các lineEdit
+        self.txtKhoa.clear()
+        self.txtTenSV.clear()
+        self.txtXepLoai.clear()
+        self.txtDiemTB.clear()
+        self.txtDiem2.clear()
+        self.txtDiem1.clear()
+        self.txtMaSV.clear()
+        self.txtMonHoc.clear()
+
+        self.load_data()
 
 
 if __name__ == "__main__":

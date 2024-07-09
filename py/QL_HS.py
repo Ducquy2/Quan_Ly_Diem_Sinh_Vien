@@ -213,7 +213,7 @@ class Ui_FormQLHSSV(object):
         MaSV = self.xemHSSV.item(selected_row, 0).text()
         TenSV = self.xemHSSV.item(selected_row, 1).text()
         Tuoi = self.xemHSSV.item(selected_row, 2).text()
-        # GioiTinh = self.xemHSSV.item(selected_row, 3).text()
+        GioiTinh = self.xemHSSV.item(selected_row, 3).text()
         DiaChi = self.xemHSSV.item(selected_row, 4).text()
         Email = self.xemHSSV.item(selected_row, 5).text()
         SDT = self.xemHSSV.item(selected_row, 6).text()
@@ -226,7 +226,7 @@ class Ui_FormQLHSSV(object):
         self.lineEdit_4.setText(DiaChi)
         self.lineEdit_5.setText(Email)
         self.lineEdit_6.setText(SDT)
-        # self.comboBox.setText(GioiTinh)
+        self.comboBox.setCurrentText(str(GioiTinh))
         self.lineEdit_7.setText(MaLop)
 
     def Lam_moi(self):

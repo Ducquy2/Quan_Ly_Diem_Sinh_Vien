@@ -67,7 +67,7 @@ class Ui_QuanLyTaiKhoanSinhVien(object):
         self.btnTim.setText(_translate("QuanLyTaiKhoanSinhVien", "Tìm kiếm"))
 
     def load_data(self):
-        conn = sqlite3.connect('../ui/ql_DiemHeDH.db')
+        conn = sqlite3.connect('ql_DiemHeDH.db')
         cursor = conn.cursor()
         cursor.execute("""
             SELECT ql_HoSoSV.MaSV, ql_HoSoSV.TenSV, ql_TaiKhoan.User, ql_TaiKhoan.Password
@@ -87,7 +87,7 @@ class Ui_QuanLyTaiKhoanSinhVien(object):
     def tim_kiem(self):
         search_SV = self.txtTim.text()
 
-        conn = sqlite3.connect('../ui/ql_DiemHeDH.db')
+        conn = sqlite3.connect('ql_DiemHeDH.db')
         cursor = conn.cursor()
         cursor.execute("""
                     SELECT ql_HoSoSV.MaSV, ql_HoSoSV.TenSV, ql_TaiKhoan.User, ql_TaiKhoan.Password
